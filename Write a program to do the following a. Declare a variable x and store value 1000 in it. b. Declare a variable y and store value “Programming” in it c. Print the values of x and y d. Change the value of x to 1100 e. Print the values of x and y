@@ -1,0 +1,9 @@
+fn main() {
+    let mut x = 1000;
+    let y = "Programming";
+    println!("X = {}, Y = {}", x,y);
+    x = 1100;
+    println!("X = {}, Y = {}", x,y);
+    
+    
+}
