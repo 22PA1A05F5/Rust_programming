@@ -1,0 +1,10 @@
+fn main() {
+    let person: (&str, i32, f64) = ("Alice", 30, 65.5);
+
+    println!("Name: {}", person.0);
+    println!("Age: {}", person.1);
+    println!("Weight: {}", person.2);
+
+    let (name, age, weight) = person;
+    println!("Destructured -> Name: {}, Age: {}, Weight: {}", name, age, weight);
+}
