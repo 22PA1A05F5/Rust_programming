@@ -1,0 +1,13 @@
+fn main() {
+    let a = 10;
+    let b = a as f64;
+
+    let c = 5.7;
+    let d = c as i32;
+
+    println!("a as integer: {}", a);
+    println!("a cast to float: {}", b);
+
+    println!("c as float: {}", c);
+    println!("c cast to integer: {}", d);
+}
