@@ -1,0 +1,8 @@
+fn main() {
+    let x = 100;
+    let y = &x;
+
+    println!("{}", x);
+    println!("{}", y);
+    println!("{}", *y);
+}
