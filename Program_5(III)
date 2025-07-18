@@ -1,0 +1,6 @@
+fn main() {
+    println!("First 10 natural numbers:");
+    for i in 1..=10 {
+        println!("{}", i);
+    }
+}
