@@ -1,0 +1,11 @@
+fn main() {
+    let mut count = 0;
+    let limit = 10;
+
+    while count < limit {
+        println!("Iteration: {}", count);
+        count += 1;
+    }
+
+    println!("Loop ended after {} iterations.", count);
+}
