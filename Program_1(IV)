@@ -1,0 +1,17 @@
+use std::io;
+
+fn factorial(n: u32) -> u32 {
+    let mut result = 1;
+    for i in 2..=n {
+        result *= i;
+    }
+    result
+}
+
+fn main() {
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    let num: u32 = input.trim().parse().expect("Please enter a valid number");
+    let result = factorial(num);
+    println!("The factorial of {} is: {}", num, result);
+}
