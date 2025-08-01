@@ -1,0 +1,30 @@
+use std::io;
+
+fn pass_by_value(mut x: i32) {
+    x += 10;
+    println!("Inside pass_by_value: x = {}", x);
+}
+
+fn pass_by_reference(x: &mut i32) {
+    *x += 10;
+    println!("Inside pass_by_reference: x = {}", x);
+}
+
+fn main() {
+    let mut input = String::new();
+
+    println!("Enter an integer for pass_by_value:");
+    io::stdin().read_line(&mut input).expect("Failed to read input");
+    let a: i32 = input.trim().parse().expect("Please enter a valid integer");
+    println!("Before pass_by_value: a = {}", a);
+    pass_by_value(a);
+    println!("After pass_by_value: a = {}", a);
+
+    input.clear();
+    println!("\nEnter an integer for pass_by_reference:");
+    io::stdin().read_line(&mut input).expect("Failed to read input");
+    let mut b: i32 = input.trim().parse().expect("Please enter a valid integer");
+    println!("Before pass_by_reference: b = {}", b);
+    pass_by_reference(&mut b);
+    println!("After pass_by_reference: b = {}", b);
+}
