@@ -1,0 +1,33 @@
+use std::io;
+
+fn arr_square(arr: &[i32]) -> Vec<i32> {
+    arr.iter().map(|&x| x * x).collect()
+}
+
+fn main() {
+    println!("Enter the number of elements:");
+
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Failed to read input");
+    let n: usize = input.trim().parse().expect("Please enter a valid number");
+
+    let mut numbers = Vec::new();
+
+    println!("Enter {} integers separated by space:", n);
+    input.clear();
+    io::stdin().read_line(&mut input).expect("Failed to read input");
+
+    for num_str in input.trim().split_whitespace() {
+        let num: i32 = num_str.parse().expect("Please enter valid integers");
+        numbers.push(num);
+    }
+
+    if numbers.len() != n {
+        println!("Warning: Number of integers entered does not match the count.");
+    }
+
+    let squares = arr_square(&numbers);
+
+    println!("Original array: {:?}", numbers);
+    println!("Squares array: {:?}", squares);
+}
